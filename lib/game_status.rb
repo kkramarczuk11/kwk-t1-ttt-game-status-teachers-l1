@@ -20,3 +20,5 @@ if WIN_COMBINATIONS.each
 else
   won?(board) == false
 end
+end
+end
