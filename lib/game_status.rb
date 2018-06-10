@@ -14,11 +14,45 @@ WIN_COMBINATIONS = [
   [0,3,6],
   [2,5,8]
 ]
-def won?(board)
-if WIN_COMBINATIONS.each
-  then won?(board) == true
-else
-  won?(board) == false
+WIN_COMBINATIONS.detect do |position|
+  if board[position[0]] == "X" && board[position[1]] == "X" && board[position[2]] == "X"
+    position
+  elsif board[position[0]] == "O" && board[position[1]] == "O" && board[position[2]] == "O"
+    position
+  else
+    false
+  end
 end
 end
+
+def full?(board)
+  board.all? do |cell|
+  cell == "X" || cell == "O"
+end
+end
+
+def draw?(board)
+  if !won?(board) && full?(board)
+    true
+  elsif !won?(board) && !full?(board)
+    false
+  else won?(board)
+    false
+  end
+end
+
+def over?(board)
+  if won?(board) || full?(board) || draw?(board)
+    true
+  else
+    false
+  end
+end
+
+def winner(board)
+ if solution = won?(board)
+  board[solution.first]
+ else
+  nil
+ end
 end
