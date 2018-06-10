@@ -24,3 +24,4 @@ WIN_COMBINATIONS.detect do |position|
     false
   end
 end
+end
