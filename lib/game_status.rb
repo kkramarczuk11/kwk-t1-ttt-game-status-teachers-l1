@@ -15,10 +15,5 @@ WIN_COMBINATIONS = [
   [2,5,8]
 ]
 def won?(board)
-  if WIN_COMBINATIONS[0,0] == "X" && WIN_COMBINATIONS[0,1] == "X" && WIN_COMBINATIONS[0,2] == "X"
-    return win_combination # return the win_combination indexes that won.
-  else
-    false
-  end
-end
+
 end
