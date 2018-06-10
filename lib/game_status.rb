@@ -25,3 +25,35 @@ WIN_COMBINATIONS.detect do |position|
   end
 end
 end
+
+def full?(board)
+  board.all? do |cell|
+  cell == "X" || cell == "O"
+end
+end
+
+def draw?(board)
+  if !won?(board) && full?(board)
+    true
+  elsif !won?(board) && !full?(board)
+    false
+  else won?(board)
+    false
+  end
+end
+
+def over?(board)
+  if won?(board) || full?(board) || draw?(board)
+    true
+  else
+    false
+  end
+end
+
+def winner(board)
+ if solution = won?(board)
+  board[solution.first]
+ else
+  nil
+ end
+end
