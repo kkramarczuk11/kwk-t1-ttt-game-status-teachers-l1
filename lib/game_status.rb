@@ -15,5 +15,8 @@ WIN_COMBINATIONS = [
   [2,5,8]
 ]
 def won?(board)
-
+if WIN_COMBINATIONS.each
+  then won?(board) == true
+else
+  won?(board) == false
 end
