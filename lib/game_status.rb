@@ -23,6 +23,7 @@ WIN_COMBINATIONS.detect do |position|
     false
   end
 end
+end
 
 def full?(board)
   board.all? do |cell|
